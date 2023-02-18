@@ -1,0 +1,25 @@
+{
+  "name": "ts-model-validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["/dist"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ts-ss-lib/ts-model-validation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ts-ss-lib/ts-model-validation/issues"
+  },
+  "homepage": "https://github.com/ts-ss-lib/ts-model-validation#readme",
+  "dependencies": {
+    "typescript": "^4.9.5"
+  }
+}
