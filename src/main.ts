@@ -9,7 +9,7 @@ interface IUser {
 
 const model: IUser = {
 
-    name: 28 as unknown as string,
+    name: 'Felipe ',
     age: 16
 
 };
@@ -31,8 +31,8 @@ class UserValidator extends ModelValidation<IUser> {
         //         .setMessage("Nome incorreto (\"Wesley\" não permitido)")
         //         .completeValidation();
 
-        this.addStringValidator('name', { typeErrorMessage: 'O nome deve ser um texto' })
-            .equals("Felipe")
+        this.stringValidator('name', { typeErrorMessage: 'O nome deve ser um texto' })
+            .equals("FelipE", { applyTrim: true, ignoreCase: true })
                 .setMessage("Nome incorreto")
                 .completeValidation();
     }
