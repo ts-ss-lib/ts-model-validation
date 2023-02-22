@@ -1,3 +1,4 @@
+import { StringEqualsValidatorOptions } from "../validators/string/functions/equals.validator";
 import { AfterFunctionInvokedType } from "./result-validation-functions.types";
 import { ArrayElementType } from "./type-check.type";
 
@@ -17,10 +18,11 @@ export type StringFunctions = {
 
     // minLength(min: number): AfterFunctionInvokedType<StringFunctions>;
     // maxLength(max: number): AfterFunctionInvokedType<StringFunctions>;
-    must(compareFn: (value: string) => boolean): AfterFunctionInvokedType<StringFunctions>;
-    must(compareFn: (value: string) => boolean, result: boolean): AfterFunctionInvokedType<StringFunctions>;
+    // must(compareFn: (value: string) => boolean): AfterFunctionInvokedType<StringFunctions>;
+    // must(compareFn: (value: string) => boolean, result: boolean): AfterFunctionInvokedType<StringFunctions>;
     equals(value: string): AfterFunctionInvokedType<StringFunctions>;
-    notEquals(value: string): AfterFunctionInvokedType<StringFunctions>;
+    equals(value: string, options: StringEqualsValidatorOptions): AfterFunctionInvokedType<StringFunctions>;
+    // notEquals(value: string): AfterFunctionInvokedType<StringFunctions>;
 
 };
 
