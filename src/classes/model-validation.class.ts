@@ -2,8 +2,12 @@ import { StringValidatorOptions } from "../options/string-validator-options.inte
 import { IModelValidation } from "../types/model-validation.inteface";
 import { StringFunctions } from "../types/validation-functions.types";
 import { ValidationStepNavigationType } from "../types/validation-step.types";
-import { StringEqualsValidatorOptions } from "../validators/string/functions/equals.validator";
-import { stringValidationFunctions } from "../validators/string/string.validators";
+import {
+    StringEqualsValidatorOptions,
+    StringMinLengthValidatorOptions,
+    stringValidationFunctions
+} from "../validators/string/string.validators";
+
 
 export abstract class ModelValidation<T> implements IModelValidation<T> {
 
@@ -68,13 +72,33 @@ export abstract class ModelValidation<T> implements IModelValidation<T> {
                             errorMessage: message,
                             isValid: (v: T[keyof T]) => {
 
-                                return stringValidationFunctions.equals(<string>v, value, options);
+                                return stringValidationFunctions.equals(<string>v, value, options ?? {});
                             }
                         });
 
                         return getNavigationValidationFunction(validationFunctions);
                     }
                 };
+            },
+
+            minLength: (minLength: number, options?: StringMinLengthValidatorOptions) => {
+
+                return {
+
+                    setMessage: (message: string) => {
+
+                        this._modelValidations.push({
+                            key: key,
+                            errorMessage: message,
+                            isValid: (v: T[keyof T]) => {
+
+                                return stringValidationFunctions.minLength(<string>v, minLength, options ?? {});
+                            }
+                        });
+
+                        return getNavigationValidationFunction(validationFunctions);
+                    }
+                }
             }
 
         };

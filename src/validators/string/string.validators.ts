@@ -1,5 +1,5 @@
-import { stringEqualsValidator } from "./functions/equals.validator";
-import { stringMinLengthValidator } from "./functions/min-length.validator";
+import { stringEqualsValidator, StringEqualsValidatorOptions } from "./functions/equals.validator";
+import { stringMinLengthValidator, StringMinLengthValidatorOptions } from "./functions/min-length.validator";
 
 /**
  * ### String validations functions
@@ -13,3 +13,8 @@ const stringValidationFunctions = {
 };
 
 export { stringValidationFunctions };
+
+export {
+    StringEqualsValidatorOptions,
+    StringMinLengthValidatorOptions
+};
