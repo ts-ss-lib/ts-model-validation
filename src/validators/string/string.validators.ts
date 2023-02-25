@@ -1,4 +1,5 @@
 import { stringEqualsValidator } from "./functions/equals.validator";
+import { stringMinLengthValidator } from "./functions/min-length.validator";
 
 /**
  * ### String validations functions
@@ -6,7 +7,8 @@ import { stringEqualsValidator } from "./functions/equals.validator";
  */
 const stringValidationFunctions = {
 
-    equals: stringEqualsValidator
+    equals: stringEqualsValidator,
+    minLength: stringMinLengthValidator
 
 };
 
