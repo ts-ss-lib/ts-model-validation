@@ -23,12 +23,12 @@ export abstract class ModelValidation<T> implements IModelValidation<T> {
         const defaultTypeErrorMessage = `Invalid type in "${key.toString()}" key`;
 
         options = options ?? {};
-        options.ignoreTypeValidation = options?.ignoreTypeValidation ?? false;
-        options.typeErrorMessage = options?.typeErrorMessage ?? defaultTypeErrorMessage;
+        options.ignoreTypeCheck = options?.ignoreTypeCheck ?? false;
+        options.errorMessage = options?.errorMessage ?? defaultTypeErrorMessage;
 
         if (options)
         {
-            if (!options.ignoreTypeValidation)
+            if (!options.ignoreTypeCheck)
             {
                 this._typeValidations.push({
                     key: key,
@@ -39,7 +39,7 @@ export abstract class ModelValidation<T> implements IModelValidation<T> {
         
                         return false;
                     },
-                    errorMessage: options.typeErrorMessage
+                    errorMessage: options.errorMessage
                 });
             }
         }
