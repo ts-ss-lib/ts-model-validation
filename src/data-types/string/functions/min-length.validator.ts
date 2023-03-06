@@ -9,13 +9,13 @@ type StringMinLengthValidatorOptions = {
     /**
      * The whitespaces in the start and/or end of the values must be considered. Default is `false`
      */
-    applyTrim?: boolean;
+    trim?: boolean;
 
 };
 
 const defaultOptions: StringMinLengthValidatorOptions = {
 
-    applyTrim: false
+    trim: false
 
 };
 
@@ -32,7 +32,7 @@ function stringMinLengthValidator(value: string, minLength: number, options: Str
 
     if (options) {
 
-        if (options.applyTrim === true) {
+        if (options.trim === true) {
             value = value.trim();
         }
     }

@@ -13,14 +13,14 @@ type StringEqualsValidatorOptions = {
     /**
      * The whitespaces in the start and/or end of the values must be considered. Default is `false`
      */
-    applyTrim?: boolean;
+    trim?: boolean;
 
 };
 
 const defaultOptions: StringEqualsValidatorOptions = {
 
     ignoreCase: false,
-    applyTrim: false
+    trim: false
 
 };
 
@@ -42,7 +42,7 @@ function stringEqualsValidator(value: string, compareValue: string, options: Str
             compareValue = compareValue.toLocaleLowerCase();
         }
 
-        if (options.applyTrim === true) {
+        if (options.trim === true) {
             value = value.trim();
             compareValue = compareValue.trim();
         }
