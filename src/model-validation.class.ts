@@ -1,12 +1,12 @@
-import { StringValidatorOptions } from "../options/string-validator-options.interface";
-import { IModelValidation } from "../types/model-validation.inteface";
-import { StringFunctions } from "../types/validation-functions.types";
-import { ValidationStepNavigationType } from "../types/validation-step.types";
+import { StringValidatorOptions } from "./data-types/string/options/string-validator-options.interface";
+import { IModelValidation } from "./model-validation.inteface";
+import { StringFunctions } from "./types/validation-functions.types";
+import { ValidationStepNavigation } from "./types/validation-step.types";
 import {
     StringEqualsValidatorOptions,
     StringMinLengthValidatorOptions,
     stringValidationFunctions
-} from "../validators/string/string.validators";
+} from "./data-types/string/validator";
 
 
 export abstract class ModelValidation<T> implements IModelValidation<T> {
@@ -44,7 +44,7 @@ export abstract class ModelValidation<T> implements IModelValidation<T> {
             }
         }
 
-        const getNavigationValidationFunction = (functionsMapping: StringFunctions): ValidationStepNavigationType<StringFunctions> => {
+        const getNavigationValidationFunction = (functionsMapping: StringFunctions): ValidationStepNavigation<StringFunctions> => {
 
             return {
 

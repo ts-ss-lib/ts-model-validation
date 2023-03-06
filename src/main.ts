@@ -1,4 +1,4 @@
-import { ModelValidation } from "./classes/model-validation.class";
+import { ModelValidation } from "./model-validation.class";
 
 interface IUser {
 
@@ -19,6 +19,8 @@ class UserValidator extends ModelValidation<IUser> {
     constructor() {
         
         super();
+
+        this.stringValidator('age', { ignoreTypeCheck: true })
     }
 }
 
