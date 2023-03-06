@@ -2,15 +2,15 @@
 // @ Validation step completation types
 // ----------------------------------------------------------------------------------------------------
 
-export type ValidationStepCompletedType = {
+export type ValidationStepCompleted = {
 
     completeValidation: () => void;
 
 }
 
-export type ValidationStepNavigationType<T> = {
+export type ValidationStepNavigation<T> = {
 
     nextValidation: () => T;
     // ignoreNextValidations: () => T;
 
-} & ValidationStepCompletedType;
+} & ValidationStepCompleted;

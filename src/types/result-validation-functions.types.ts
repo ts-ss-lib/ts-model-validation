@@ -1,12 +1,12 @@
-import { ValidationStepNavigationType } from "./validation-step.types";
+import { ValidationStepNavigation } from "./validation-step.types";
 
 // ----------------------------------------------------------------------------------------------------
 // @ After validation function invoked
 // ----------------------------------------------------------------------------------------------------
 
-export type AfterFunctionInvokedType<T> = {
+export type FunctionInvoked<T> = {
 
-    setMessage: (message: string) => ValidationStepNavigationType<T>;
+    setMessage: (message: string) => ValidationStepNavigation<T>;
     // useDefaultMessage: () => ValidationStepNavigationType<T>;
 
 };

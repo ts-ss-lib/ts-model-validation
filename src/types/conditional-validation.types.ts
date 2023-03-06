@@ -1,4 +1,4 @@
-import { ValidationStepCompletedType } from "./validation-step.types";
+import { ValidationStepCompleted } from "./validation-step.types";
 
 // ----------------------------------------------------------------------------------------------------
 // @ Conditional validation function results
@@ -12,6 +12,6 @@ export type ConditionalValidationFunctions = {
 
 export type ConditionalValidationElseFunctions = {
 
-    else: (addValidatorsFn: () => void) => ValidationStepCompletedType;
+    else: (addValidatorsFn: () => void) => ValidationStepCompleted;
 
-} & ValidationStepCompletedType;
+} & ValidationStepCompleted;
